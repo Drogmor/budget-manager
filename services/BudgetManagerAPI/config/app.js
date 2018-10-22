@@ -34,5 +34,24 @@ app.use(cors());
     });
 */
 app.use(passport.initialize());
+app.set('budgetsecret', config.secret);
+
+
+// Next Step: begin creating API methods in ./app/api folder starting with auth.js
+
+/* *** STEP (9) ***
+    After creating the ./app/routes/auth.js file and setting the routes
+*/
 
 app.set('budgetsecret', config.secret);
+// Ensure that the 'setup' file is loaded first in order to initiate the models.
+// After the 'setup' load the 'api' methods and the 'routes'
+consign({cwd: 'services'})
+        .include('BudgetManagerAPI/app/setup')
+        .include('BudgetManagerAPI/app/api')
+        .include('BudgetManagerAPI/app/routes')
+        .into(app);
+
+module.exports = app;
+
+// Next Step: Create the 'user.js' file in the ./app/api folder

@@ -9,6 +9,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "homepage": "https://github.com/gdomaradzki/focus-gestor-orcamentos#readme",
+  "_moduleAliases": {
+    "@root": ".",
+    "@BudgetManager": "./services/BudgetManagerAPI",
+    "@BudgetManagerModels": "./services/BudgetManagerAPI/app/models",
+    "@BudgetManagerAPI": "./services/BudgetManagerAPI/config/app.js",
+    "@config": "./services/BudgetManagerAPI/config/index.js"
+  },
   "dependencies": {
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",

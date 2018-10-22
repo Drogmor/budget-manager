@@ -10,7 +10,8 @@ module.exports = (mongoose, config) => {
 
     // Create a standard mongoose connection
     mongoose.connect(config.database, {
-        useMongoClient: true,
+        // useMongoClient: true,
+        useNewUrlParser: true,
         promiseLibrary: global.Promise
     });
     
