@@ -1,15 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+/* 
+  *** Step 2: Cleaning up the routes file ***
+  This file will be used to import components and define any routes for simplicity.
+*/
+
+// Pages
+import Authentication from '@/components/pages/Authentication/Authentication'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/login',
+      name: 'Authentication',
+      component: Authentication
     }
   ]
 })
