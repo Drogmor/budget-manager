@@ -6,42 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+        }
+
+        .container {
+            margin: 60px auto;
+            max-width: 1024px;
+
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding: 0.4em;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
+        <ul>
+            <li style="strong">Part 2</li>
+            <ul>
+                <li>Step 1: Clean up the ./src/App.vue file.</li>
+                <li>Step 2: Cluean up the routes file in ./router/index.js</li>
+                <li>Step 3: Delete the HelloWorld.vue ./components file</li>
+                <li>Step 4: Install additional packages</li>
+                <li>Step 5: Create ./src/components/pages/Authentication/Authentication.vue</li>
+                <li>Step 6: Import Vuetify and Vue-cookie in ./src/main.js</li>
+                <li>Step 7: Styling<br />
+                    <ul>
+                        <li>Step 7.1: Create styles.scss in ./assets</li>
+                        <li>Step 7.2: Create folder ./assets/partials</li>
+                        <li>Step 7.3: Create _variables.scss in /partials</li>
+                        <li>Step 7.4: Create animations.scss in /partials</li>
+                        <li>Step 7.5: Create the styles in the partial files</li>
+                        <li>Step 7.6: @import the partials in styles.scss</li>
+                        <li>Step 7.8: Do some styling in App.vue</li>
+                    </ul>
+                </li>
+                <li>Step 8: Create the folder ./assets/images</li>
+                <li>Step 9: Check meta headers in index.html</li>
+                <li>Step 10: Start building the authentication component<br />
+                    <ul>
+                        <li>Step 10.1: Create /Athentication/index.js</li>
+                        <li>Step 10.2: import packages and declare a cosnt with the path to the API</li>
+                        <li>Step 10.3: Create the authentication object</li>
+                        <li>Step 10.4: Build the Vue component in Authentication.vue</li>
+                        <li>Step 10.5: Style the component below the script</li>
+                    </ul>
+                </li>
+                <li>Step 11: Start building the home page component in ./pages/Home.vue</li>
+                <li>Step 12: Define a navigation guard in ./router/index.js</li>
+            </ul>
+            <li style="strong">Part 3</li>
+            <ul>
+                <li>Step 13: Make appropriate fixes</li>
+                <ul>
+                    <li>Step 13.1: Make styling changes in App.vue</li>
+                    <li>Step 13.2: Replace div#app with v-app</li>
+                    <li>Step 13.3: Make styling changes in Authentication.vue</li>
+                    <li>Step 13.4: Make changes in the athenticate method in Authentication/index.js</li>
+                    <li>Step 13.5: Make changes in the signup method in Authentication/index.js</li>
+                </ul>
 
-    <ul>
-        <li>Step 1: Clean up the ./src/App.vue file.</li>
-        <li>Step 2: Cluean up the routes file in ./router/index.js</li>
-        <li>Step 3: Delete the HelloWorld.vue ./components file</li>
-        <li>Step 4: Install additional packages</li>
-        <li>Step 5: Create ./src/components/pages/Authentication/Authentication.vue</li>
-        <li>Step 6: Import Vuetify and Vue-cookie in ./src/main.js</li>
-        <li>Step 7: Styling<br />
-            <ul>
-                <li>Step 7.1: Create styles.scss in ./assets</li>
-                <li>Step 7.2: Create folder ./assets/partials</li>
-                <li>Step 7.3: Create _variables.scss in /partials</li>
-                <li>Step 7.4: Create animations.scss in /partials</li>
-                <li>Step 7.5: Create the styles in the partial files</li>
-                <li>Step 7.6: @import the partials in styles.scss</li>
-                <li>Step 7.8: Do some styling in App.vue</li>
             </ul>
-        </li>
-        <li>Step 8: Create the folder ./assets/images</li>
-        <li>Step 9: Check meta headers in index.html</li>
-        <li>Step 10: Start building the authentication component<br />
-            <ul>
-                <li>Step 10.1: Create /Athentication/index.js</li>
-                <li>Step 10.2: import packages and declare a cosnt with the path to the API</li>
-                <li>Step 10.3: Create the authentication object</li>
-                <li>Step 10.4: Build the Vue component in Authentication.vue</li>
-                <li>Step 10.5: Style the component below the script</li>
-            </ul>
-        </li>
-        <li>Step 11: Start building the home page component in ./pages/Home.vue</li>
-        <li>Step 12: Define a navigation guard in ./router/index.js</li>
-    </ul>
+        </ul>
+    </div>
 
 </body>
 

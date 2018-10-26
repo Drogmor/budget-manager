@@ -16,10 +16,11 @@ export default {
     // 1) Use Axios to perform a POST on the API passing the arg: credentials
     // axios.post('url', data).then((response) => { console.log(response)}).catch((error) => {console.log(error)})
     Axios.post(`${BudgetManagerAPI}/api/v1/auth`, credentials)
-      // 2) destructure the data obj to keep the value of the {token}
-      .then(({ data: { token } }) => {
+      // 2) pass the {data} to then()
+      .then(({ data }) => {
         // 3) store the {token} as a cookie (1d means expire in 1 day)
-        context.$cookie.set('token', token, '1D')
+        context.$cookie.set('token', data.token, '1D')
+        context.$cookie.set('user_id', data.user._id, '1D')
         // 4) set the component's (arg: context) validLogin value to true
         context.validLogin = true
         // 5) set the {user}.authenticated to true
@@ -36,11 +37,9 @@ export default {
 
   signup (context, credentials, redirect) {
     Axios.post(`${BudgetManagerAPI}/api/v1/signup`, credentials)
-      .then(({ data: { token } }) => {
-        context.$cookie.set('token', token, '1D')
+      .then(() => {
         context.validSignup = true
         this.user.authenticated = true
-        if (redirect) router.push(redirect)
       })
       .catch(({ response: { data } }) => {
         context.snackbar = true
@@ -48,12 +47,19 @@ export default {
       })
   },
 
+  signout (context, redirect) {
+    context.$cookie.delete('token')
+    context.$cookie.delete('user_id')
+    this.user.authenticated = false
+
+    if (redirect) router.push(redirect)
+  },
+
   // method to check if the user is authenticated
   checkAuthentication () {
     const token = document.cookie
 
-    if (token) this.user.authenticated = true
-    else this.user.authenticated = false
+    this.user.authenticated = !!token
   },
 
   // method to return the authentication header
